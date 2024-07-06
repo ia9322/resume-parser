@@ -1,4 +1,4 @@
-import fitz  # PyMuPDF
+import fitz 
 import json
 
 def extract_text_from_pdf(pdf_path):
@@ -21,8 +21,7 @@ def parse_resume_to_json(resume_text):
         "certifications": [],
         "projects": []
     }
-    # Parsing logic here
-    # This example is simplified and should be expanded
+
     lines = resume_text.split('\n')
     for line in lines:
         if 'Name:' in line:
@@ -64,8 +63,7 @@ def parse_resume_to_json(resume_text):
             parsed_data['projects'].append(project)
     return json.dumps(parsed_data, indent=4)
 
-# Example usage
-pdf_path = 'resume.pdf'  # Replace with your actual PDF file path
+pdf_path = 'resume.pdf'
 resume_text = extract_text_from_pdf(pdf_path)
 parsed_json = parse_resume_to_json(resume_text)
 print(parsed_json)
