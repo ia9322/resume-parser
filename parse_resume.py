@@ -58,7 +58,6 @@ def parse_resume_to_json(resume_text):
             project = {
                 "title": line.split('Project:')[1].strip(),
                 "description": "",
-                "technologies": []
             }
             parsed_data['projects'].append(project)
     return json.dumps(parsed_data, indent=4)
